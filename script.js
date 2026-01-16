@@ -1,5 +1,5 @@
 /* =========================================
-   AUORA: INTERACTIVE LOGIC
+   AOURA: INTERACTIVE LOGIC
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {

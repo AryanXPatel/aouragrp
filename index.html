@@ -8,11 +8,11 @@
     <meta name="description"
         content="Auora E-Commerce Services helps your business sell on Amazon & Noon. Account setup, product listing, logistics & support in UAE.">
 
-    <!-- Fonts: Syne (Display) & Space Grotesk (Body) -->
+    <!-- Fonts: Anton (Display), Space Grotesk (Body), Playfair Display (Serif Accent) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -34,28 +34,30 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Navigation / Top Bar Grid -->
-    <header class="top-bar-grid">
-        <div class="grid-item logo-area">
-            <img src="Amazon%20&%20Noon%20Setup%20UAE%20_%20Aoura%20E-Commerce%20Services_files/cropped-cropped-Aoura_Services-9-_6-removebg-preview-353x99.png"
-                alt="AUORA" class="logo-img">
+    <!-- Navigation - DEPT Style -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#why-us" class="nav-link">About</a>
         </div>
-        <div class="grid-item meta-data">
-            <span class="label">LOC</span>
-            <span class="value">DUBAI, UAE</span>
+        <div class="nav-center">
+            <a href="#" class="brand-mark">
+                <img src="Amazon%20&%20Noon%20Setup%20UAE%20_%20Aoura%20E-Commerce%20Services_files/cropped-cropped-Aoura_Services-9-_6-removebg-preview-353x99.png"
+                    alt="AUORA E-Commerce Services" class="logo-img">
+            </a>
         </div>
-        <div class="grid-item meta-data">
-            <span class="label">TIME</span>
-            <span class="value" id="dubai-time">--:--</span>
+        <div class="nav-right">
+            <a href="#contact" class="btn-contact">CONTACT</a>
         </div>
-        <div class="grid-item menu-trigger nav-menu-btn">
-            <span class="menu-text">MENU</span>
+        <!-- Mobile Menu Button -->
+        <div class="nav-menu-btn mobile-only">
             <div class="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Fullscreen Menu Overlay -->
     <div class="menu-overlay">
@@ -69,62 +71,152 @@
 
     <main data-scroll-container>
 
-        <!-- Radical Hero Section -->
-        <section class="hero-radical" data-scroll-section>
-
-            <!-- Background Grid Lines -->
-            <div class="bg-grid">
-                <div class="v-line"></div>
-                <div class="v-line"></div>
-                <div class="v-line"></div>
-                <div class="v-line"></div>
+        <!-- Hero Section - DEPT Style -->
+        <section class="hero" data-scroll-section>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="line">BUILD</span>
+                    <span class="line accent">EMPIRES.</span>
+                    <span class="line">NOT JUST</span>
+                    <span class="line">ACCOUNTS.</span>
+                </h1>
             </div>
 
-            <div class="hero-main-stage">
-                <div class="status-ticker">
-                    <span class="status-dot"></span> SYSTEM STATUS: OPERATIONAL
+            <div class="hero-footer">
+                <div class="hero-tagline">
+                    <p>Most agencies set up accounts. We engineer market dominance across Amazon & Noon.</p>
                 </div>
+                <a href="#contact" class="btn-primary">CLAIM YOUR FREE AUDIT <span class="arrow">→</span></a>
+            </div>
 
-                <div class="massive-title-container">
-                    <h1 class="hero-title">
-                        <div class="title-row">
-                            <span class="glitch-text">GLOBAL</span>
-                            <span class="sub-id">[01]</span>
-                        </div>
-                        <div class="title-row indent">
-                            <span>GROWTH</span>
-                        </div>
-                        <div class="title-row">
-                            <span>INFRASTRUCTURE</span>
-                        </div>
-                    </h1>
-                </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-                <div class="hero-footer-grid">
-                    <div class="scroll-indicator">
-                        ( SCROLL TO EXPLORE )
+        <!-- Services Showcase - Interactive Index -->
+        <section class="services-showcase" data-scroll-section>
+            <div class="service-index">
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">01</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Launch on Amazon</h3>
+                            <span class="service-index-subline">From zero to verified in 14 days, not months.</span>
+                        </div>
                     </div>
-                    <div class="integrated-marquee">
-                        <div class="marquee-track">
-                            <span>AMAZON SELLER CENTRAL • NOON SELLER HUB • LOGISTICS • ACCOUNT MANAGEMENT •</span>
-                            <span>AMAZON SELLER CENTRAL • NOON SELLER HUB • LOGISTICS • ACCOUNT MANAGEMENT •</span>
+                    <span class="service-index-arrow">→</span>
+                </div>
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">02</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Dominate Noon</h3>
+                            <span class="service-index-subline">The Gulf's fastest-growing marketplace. Own it.</span>
+                        </div>
+                    </div>
+                    <span class="service-index-arrow">→</span>
+                </div>
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">03</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Ship Without Stress</h3>
+                            <span class="service-index-subline">Your products delivered. Your reputation intact.</span>
+                        </div>
+                    </div>
+                    <span class="service-index-arrow">→</span>
+                </div>
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">04</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Operate Hands-Free</h3>
+                            <span class="service-index-subline">We handle the chaos. You count the revenue.</span>
+                        </div>
+                    </div>
+                    <span class="service-index-arrow">→</span>
+                </div>
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">05</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Outgrow Everyone</h3>
+                            <span class="service-index-subline">Data-driven playbooks for relentless scaling.</span>
+                        </div>
+                    </div>
+                    <span class="service-index-arrow">→</span>
+                </div>
+                <div class="service-index-item">
+                    <div class="service-index-left">
+                        <span class="service-index-number">06</span>
+                        <div class="service-index-content">
+                            <h3 class="service-index-title">Build a Legacy</h3>
+                            <span class="service-index-subline">Brands that outlast algorithms.</span>
+                        </div>
+                    </div>
+                    <span class="service-index-arrow">→</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Portfolio Section -->
+        <section class="work" id="work" data-scroll-section>
+            <div class="container">
+                <h2 class="section-title-massive">WORK</h2>
+
+                <div class="bento-grid">
+                    <div class="bento-item large">
+                        <img src="assets/work-analytics.png" alt="E-Commerce Growth Analytics" class="bento-image">
+                        <div class="bento-overlay">
+                            <span class="client">Analytics</span>
+                            <span class="project">+147% Growth Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/work-marketplace.png" alt="Premium Marketplace" class="bento-image">
+                        <div class="bento-overlay">
+                            <span class="client">Marketplace</span>
+                            <span class="project">Product Catalog</span>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/work-products.png" alt="Premium Products" class="bento-image">
+                        <div class="bento-overlay">
+                            <span class="client">Products</span>
+                            <span class="project">Brand Catalog</span>
+                        </div>
+                    </div>
+                    <div class="bento-item wide">
+                        <img src="assets/work-consulting.png" alt="Auora Consulting" class="bento-image">
+                        <div class="bento-overlay">
+                            <span class="client">AUORA Team</span>
+                            <span class="project">Strategic Growth</span>
+                        </div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="assets/work-logistics.png" alt="Fulfillment Warehouse" class="bento-image">
+                        <div class="bento-overlay">
+                            <span class="client">Logistics</span>
+                            <span class="project">Fulfillment Center</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-
         <!-- Intro / About Section -->
         <section class="intro" id="why-us" data-scroll-section>
             <div class="container">
                 <div class="intro-grid">
-                    <div class="intro-label">WHAT WE DO</div>
+                    <div class="intro-label">THE AOURA DIFFERENCE</div>
                     <div class="intro-text">
-                        <h2>We don't just set up accounts. We build <span class="text-outline">dominance</span>.</h2>
-                        <p>AOURA E-Services handles the complete lifecycle: setup, verification, listing, and logistics.
-                            We guide you through every step, ensuring your brand isn't just present, but powerful.</p>
+                        <h2>We don't just set up accounts. We build <span class="text-outline">market leaders</span>.
+                        </h2>
+                        <p>From application to first sale in weeks—not months. From first sale to category dominance in
+                            quarters—not years. AOURA handles the messy middle: verification nightmares, listing
+                            optimization, logistics headaches. You focus on product. We engineer your position.</p>
                     </div>
                 </div>
             </div>
@@ -134,7 +226,7 @@
         <section class="services" id="services" data-scroll-section>
             <div class="container">
                 <div class="section-header">
-                    <h2>CORE CAPABILITIES</h2>
+                    <h2>THE AOURA SYSTEM</h2>
                     <div class="line"></div>
                 </div>
 
@@ -142,40 +234,75 @@
                     <div class="service-card">
                         <div class="card-header">01</div>
                         <h3>Marketplace Setup</h3>
-                        <p>Complete account setup and verification for Amazon & Noon. We handle the red tape so you can
-                            sell faster.</p>
+                        <p>Zero to live in 14 days. We've cracked the verification code—trade licenses, bank letters,
+                            brand approvals. You focus on product. We handle the bureaucracy.</p>
                         <div class="card-icon">↗</div>
                     </div>
                     <div class="service-card inverted">
                         <div class="card-header">02</div>
                         <h3>Product Listing</h3>
-                        <p>SEO-optimized listings that convert. We position your products to capture maximum visibility.
-                        </p>
+                        <p>Listings engineered for the algorithm. Keyword-rich. Conversion-optimized. The difference
+                            between page 10 and the Buy Box.</p>
                         <div class="card-icon">↗</div>
                     </div>
                     <div class="service-card">
                         <div class="card-header">03</div>
                         <h3>Aoura Logistics</h3>
-                        <p>Reliable, efficient shipping solutions. Enjoy special rates for e-commerce orders and
-                            personal deliveries.</p>
+                        <p>Your secret weapon: shipping rates below market. Same-day dispatch across UAE. Zero
+                            fulfillment stress. Included with every package.</p>
                         <div class="card-icon">↗</div>
                     </div>
                     <div class="service-card">
                         <div class="card-header">04</div>
-                        <h3>Growth Reports</h3>
-                        <p>Weekly performance metrics and ongoing support to ensure your business scales smoothly.</p>
+                        <h3>Growth Intelligence</h3>
+                        <p>Intelligence, not just data. Weekly actionable insights that turn stagnation into momentum.
+                            Know what's working. Kill what isn't.</p>
                         <div class="card-icon">↗</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Image Break / Parallax -->
-        <section class="image-break" data-scroll-section>
-            <div class="parallax-image-container">
-                <!-- Placeholder for high-impact image, generated via JS or CSS -->
-                <div class="parallax-overlay">
-                    <h2>UNIFIED COMMERCE</h2>
+        <!-- Challenges Section - Clean Redesign -->
+        <section class="challenges-new" data-scroll-section>
+            <div class="container">
+                <div class="challenges-wrapper">
+                    <div class="challenges-label">PROBLEMS WE ELIMINATE</div>
+                    <div class="challenges-headline">
+                        <h2>Your competitors won't wait. <em>Neither should you.</em></h2>
+                        <p class="challenges-subtext">Every week you spend wrestling with marketplace bureaucracy is a
+                            week your competitors are scaling. We eliminate the friction so you can focus on growth.</p>
+                    </div>
+                    <div class="challenges-list-grid">
+                        <div class="challenge-card">
+                            <span class="challenge-number">01</span>
+                            <h3>Marketplace Complexity</h3>
+                            <p>Endless documentation loops. Rejected applications. Verification limbo.</p>
+                            <span class="challenge-solution">WE SOLVE: Full-service verification with 98% approval
+                                rate.</span>
+                        </div>
+                        <div class="challenge-card">
+                            <span class="challenge-number">02</span>
+                            <h3>Logistics Nightmares</h3>
+                            <p>Shipping delays. Lost inventory. Angry customers. Damaged reputation.</p>
+                            <span class="challenge-solution">WE SOLVE: Integrated Aoura Logistics with same-day UAE
+                                dispatch.</span>
+                        </div>
+                        <div class="challenge-card">
+                            <span class="challenge-number">03</span>
+                            <h3>Growth Stagnation</h3>
+                            <p>Invisible listings. Zero traffic. Competitors eating your market share.</p>
+                            <span class="challenge-solution">WE SOLVE: Algorithm-optimized listings driving 147% average
+                                growth.</span>
+                        </div>
+                        <div class="challenge-card">
+                            <span class="challenge-number">04</span>
+                            <h3>Compliance Risks</h3>
+                            <p>Account suspensions. Policy violations. Revenue-killing penalties.</p>
+                            <span class="challenge-solution">WE SOLVE: Proactive monitoring. Zero client suspensions
+                                since 2024.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,7 +310,7 @@
         <!-- Reviews Section -->
         <section class="reviews" id="reviews" data-scroll-section>
             <div class="container">
-                <h2 class="reviews-title">TRUSTED BY BRANDS</h2>
+                <h2 class="reviews-title">CLIENT RESULTS</h2>
                 <div class="reviews-slider">
                     <div class="review-item">
                         <div class="stars">★★★★★</div>
@@ -203,11 +330,7 @@
                         <div class="review-author">Photoporium Pro</div>
                     </div>
                 </div>
-                <div class="google-badge">
-                    <span>EXCELLENT</span>
-                    <span class="rating">5.0</span>
-                    <span class="source">Based on Google Reviews</span>
-                </div>
+
             </div>
         </section>
 
@@ -215,19 +338,24 @@
         <footer class="footer" id="contact" data-scroll-section>
             <div class="container">
                 <div class="footer-cta">
-                    <h2>READY TO SCALE?</h2>
-                    <a href="mailto:contact@aouragrp.com" class="btn-giant">LET'S TALK</a>
+                    <span class="cta-label">YOUR COMPETITORS WON'T WAIT.</span>
+                    <a href="mailto:contact@aouragrp.com" class="btn-giant">BOOK A STRATEGY CALL</a>
                 </div>
 
                 <div class="footer-grid">
                     <div class="footer-col">
-                        <h4>Socials</h4>
+                        <h4>Subscribe</h4>
+                        <form class="newsletter-form" onsubmit="return false;">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">SIGN UP</button>
+                        </form>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
                         <ul>
                             <li><a href="https://www.instagram.com/aouragrp/" target="_blank">Instagram</a></li>
                             <li><a href="https://ae.linkedin.com/company/aouragroup" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://x.com/Desk_Essential" target="_blank">X (Twitter)</a></li>
-                            <li><a href="https://www.facebook.com/people/AOURA-GRP/61579316603618/"
-                                    target="_blank">Facebook</a></li>
+                            <li><a href="https://x.com/Desk_Essential" target="_blank">Twitter</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -238,7 +366,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <p>&copy; 2026 Auora E-Commerce Services.</p>
+                        <p class="copyright">&copy; 2026 Auora E-Commerce Services.</p>
                     </div>
                 </div>
 

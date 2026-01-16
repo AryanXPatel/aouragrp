@@ -137,6 +137,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- DUBAI TIME CLOCK ---
+    function updateDubaiTime() {
+        const timeDisplay = document.getElementById('dubai-time');
+        if (timeDisplay) {
+            const now = new Date();
+            const options = { timeZone: "Asia/Dubai", hour: '2-digit', minute: '2-digit' };
+            timeDisplay.textContent = now.toLocaleTimeString('en-US', options);
+        }
+    }
+    setInterval(updateDubaiTime, 1000);
+    updateDubaiTime(); // Initial call
+
+    // --- SCROLL VELOCITY SKEW EFFECT (Think Hard - Kinetic Type) ---
+    let currentScroll = 0;
+
+    // Select the hero title for skewing
+    const heroTitle = document.querySelector('.hero-title');
+
+    function skewEffect() {
+        if (!heroTitle) return;
+
+        const newScroll = window.scrollY;
+        const diff = newScroll - currentScroll;
+        const speed = diff * 0.15; // Sensitivity
+
+        // Clamp the skew to avoid breaking text visual
+        const skew = Math.min(Math.max(speed, -7), 7);
+
+        // Apply skew
+        heroTitle.style.transform = `skewY(${skew}deg)`;
+
+        currentScroll = newScroll;
+        requestAnimationFrame(skewEffect);
+    }
+
+    // Start the loop
+    skewEffect();
+
     // --- REMOVE LOADING CLASS ---
     window.onload = () => {
         document.body.classList.remove('is-loading');

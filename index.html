@@ -34,22 +34,28 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-logo">
-            <a href="#">
-                <img src="Amazon%20&%20Noon%20Setup%20UAE%20_%20Aoura%20E-Commerce%20Services_files/cropped-cropped-Aoura_Services-9-_6-removebg-preview-353x99.png"
-                    alt="AUORA Logo" class="logo-img">
-            </a>
+    <!-- Navigation / Top Bar Grid -->
+    <header class="top-bar-grid">
+        <div class="grid-item logo-area">
+            <img src="Amazon%20&%20Noon%20Setup%20UAE%20_%20Aoura%20E-Commerce%20Services_files/cropped-cropped-Aoura_Services-9-_6-removebg-preview-353x99.png"
+                alt="AUORA" class="logo-img">
         </div>
-        <div class="nav-menu-btn">
-            <span>MENU</span>
+        <div class="grid-item meta-data">
+            <span class="label">LOC</span>
+            <span class="value">DUBAI, UAE</span>
+        </div>
+        <div class="grid-item meta-data">
+            <span class="label">TIME</span>
+            <span class="value" id="dubai-time">--:--</span>
+        </div>
+        <div class="grid-item menu-trigger nav-menu-btn">
+            <span class="menu-text">MENU</span>
             <div class="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Fullscreen Menu Overlay -->
     <div class="menu-overlay">
@@ -63,55 +69,52 @@
 
     <main data-scroll-container>
 
-        <!-- Hero Section -->
-        <section class="hero" data-scroll-section>
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="reveal-text">THE WORLD</span>
-                    <span class="reveal-text">DOESN'T WAIT</span>
-                    <span class="reveal-text highlight">FOR GROWTH</span>
-                </h1>
-                <div class="hero-sub">
-                    <p>Your All-In-One Partner for Amazon, Noon & E-Commerce Fulfillment in the UAE.</p>
-                    <a href="#contact" class="btn-primary">START SCALING <span class="arrow">→</span></a>
+        <!-- Radical Hero Section -->
+        <section class="hero-radical" data-scroll-section>
+
+            <!-- Background Grid Lines -->
+            <div class="bg-grid">
+                <div class="v-line"></div>
+                <div class="v-line"></div>
+                <div class="v-line"></div>
+                <div class="v-line"></div>
+            </div>
+
+            <div class="hero-main-stage">
+                <div class="status-ticker">
+                    <span class="status-dot"></span> SYSTEM STATUS: OPERATIONAL
+                </div>
+
+                <div class="massive-title-container">
+                    <h1 class="hero-title">
+                        <div class="title-row">
+                            <span class="glitch-text">GLOBAL</span>
+                            <span class="sub-id">[01]</span>
+                        </div>
+                        <div class="title-row indent">
+                            <span>GROWTH</span>
+                        </div>
+                        <div class="title-row">
+                            <span>INFRASTRUCTURE</span>
+                        </div>
+                    </h1>
+                </div>
+
+                <div class="hero-footer-grid">
+                    <div class="scroll-indicator">
+                        ( SCROLL TO EXPLORE )
+                    </div>
+                    <div class="integrated-marquee">
+                        <div class="marquee-track">
+                            <span>AMAZON SELLER CENTRAL • NOON SELLER HUB • LOGISTICS • ACCOUNT MANAGEMENT •</span>
+                            <span>AMAZON SELLER CENTRAL • NOON SELLER HUB • LOGISTICS • ACCOUNT MANAGEMENT •</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Marquee Section -->
-        <section class="marquee-section" data-scroll-section>
-            <div class="marquee-track">
-                <div class="marquee-content">
-                    <span>AMAZON SELLER CENTRAL</span>
-                    <span class="separator">•</span>
-                    <span>NOON SELLER HUB</span>
-                    <span class="separator">•</span>
-                    <span>LOGISTICS</span>
-                    <span class="separator">•</span>
-                    <span>ACCOUNT MANAGEMENT</span>
-                    <span class="separator">•</span>
-                    <span>GROWTH STRATEGY</span>
-                    <span class="separator">•</span>
-                    <span>FULFILLMENT</span>
-                    <span class="separator">•</span>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="marquee-content" aria-hidden="true">
-                    <span>AMAZON SELLER CENTRAL</span>
-                    <span class="separator">•</span>
-                    <span>NOON SELLER HUB</span>
-                    <span class="separator">•</span>
-                    <span>LOGISTICS</span>
-                    <span class="separator">•</span>
-                    <span>ACCOUNT MANAGEMENT</span>
-                    <span class="separator">•</span>
-                    <span>GROWTH STRATEGY</span>
-                    <span class="separator">•</span>
-                    <span>FULFILLMENT</span>
-                    <span class="separator">•</span>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Intro / About Section -->
         <section class="intro" id="why-us" data-scroll-section>

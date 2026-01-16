@@ -217,6 +217,12 @@ img {
     gap: 6px;
 }
 
+.brand-mark .logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
 .brand-icon {
     width: 36px;
     height: 36px;
@@ -566,7 +572,102 @@ img {
 }
 
 /* =========================================
-   CHALLENGES SECTION - DARK MODE
+   CHALLENGES SECTION - NEW CLEAN DESIGN
+   ========================================= */
+.challenges-new {
+    background: #fff;
+    padding: var(--spacing-block) var(--spacing-container);
+    border-top: 1px solid #eee;
+}
+
+.challenges-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.challenges-label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.challenges-headline {
+    margin-bottom: 60px;
+}
+
+.challenges-headline h2 {
+    font-family: var(--font-body);
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.challenges-headline h2 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #888;
+}
+
+.challenges-subtext {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 700px;
+}
+
+.challenges-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.challenge-card {
+    padding: 30px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    background: #fff;
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 16px;
+}
+
+.challenge-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--color-text);
+}
+
+.challenge-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* =========================================
+   CHALLENGES SECTION - DARK MODE (DEPRECATED)
    ========================================= */
 .challenges {
     background: #0a0a0a;
@@ -1256,5 +1357,25 @@ img {
 
     .btn-giant {
         font-size: clamp(40px, 12vw, 80px);
+    }
+
+    /* New Challenges Section Responsive */
+    .challenges-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .challenges-headline h2 {
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .challenge-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .challenges-list-grid {
+        grid-template-columns: 1fr;
     }
 }

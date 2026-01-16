@@ -489,7 +489,7 @@ img {
 }
 
 /* =========================================
-   SERVICES SHOWCASE - STACKED LAYOUT
+   SERVICE INDEX (INTERACTIVE & CLEAN)
    ========================================= */
 .services-showcase {
     padding: 80px var(--spacing-container);
@@ -499,33 +499,75 @@ img {
     overflow: hidden;
 }
 
-.services-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-}
-
-.services-col {
+.service-index {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    width: 100%;
 }
 
-.service-item {
+.service-index-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px 0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    text-decoration: none;
+}
+
+.service-index-item:hover {
+    border-color: var(--color-accent);
+    padding-left: 20px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.service-index-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.service-index-number {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: #999;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    min-width: 30px;
+    transition: color 0.3s;
+}
+
+.service-index-title {
     font-family: var(--font-display);
-    font-size: clamp(28px, 4.5vw, 52px);
+    font-size: clamp(32px, 5vw, 72px);
     font-weight: 400;
     text-transform: uppercase;
     color: var(--color-text);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    line-height: 1.1;
+    margin: 0;
+    line-height: 1;
+    transition: color 0.3s ease;
 }
 
-.service-item .bullet {
+.service-index-arrow {
+    font-size: 2rem;
+    color: var(--color-text);
+    opacity: 0.2;
+    transform: rotate(-45deg);
+    transition: all 0.4s ease;
+}
+
+/* Hover States */
+.service-index-item:hover .service-index-title,
+.service-index-item:hover .service-index-number {
     color: var(--color-accent);
-    font-size: 0.8em;
+}
+
+.service-index-item:hover .service-index-arrow {
+    opacity: 1;
+    color: var(--color-accent);
+    transform: rotate(0deg) translateX(10px);
 }
 
 /* =========================================

@@ -1,61 +1,51 @@
 /* =========================================
-   AUORA: DEPT-STYLE BRUTALIST REDESIGN
+   AUORA: DEPT-STYLE BRUTALIST [LIGHT MODE]
    ========================================= */
 
 :root {
-    /* Colors */
-    --color-bg: #EAEAEA;
-    --color-text: #111111;
-    --color-accent: #FF4D00; /* International Orange */
-    --color-white: #FFFFFF;
-    --color-black: #000000;
-    --color-gray: #888888;
-    
+    /* Colors - Light Mode Default */
+    --color-bg: #FFFFFF;
+    --color-text: #050505;
+    --color-accent: #FF4D00;
+    /* International Orange remains for punch */
+    --color-secondary: #F4F4F4;
+    /* Light gray for blocks */
+    --color-border: #111111;
+
     /* Typography */
     --font-display: 'Syne', sans-serif;
     --font-body: 'Space Grotesk', sans-serif;
-    
+
     /* Spacing */
     --spacing-container: 4vw;
     --spacing-block: 120px;
-    
-    /* Grid */
-    --grid-columns: 12;
-    --grid-gap: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg: #050505;
-        --color-text: #F0F0F0;
-        --color-white: #111111; /* Inverted logic */
-    }
-}
-
-/* Force Dark Mode for that "high-end tech" feel */
+/* Force Light Mode */
 body {
-    background-color: #050505;
-    color: #F0F0F0;
-    --color-bg: #050505;
-    --color-text: #F0F0F0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
 
 /* =========================================
    RESET & BASICS
    ========================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     overflow-x: hidden;
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.5;
-    cursor: none; /* Custom cursor */
+    cursor: none;
 }
 
 a {
@@ -69,6 +59,70 @@ img {
 }
 
 /* =========================================
+   PRELOADER
+   ========================================= */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader.loaded {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-text {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 2px;
+    background: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-progress {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: loadProgress 1.5s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* =========================================
    CUSTOM CURSOR
    ========================================= */
 .cursor {
@@ -77,12 +131,11 @@ img {
     background: var(--color-accent);
     border-radius: 50%;
     position: fixed;
-    top: 0;
-    left: 0;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
+    /* Use exclusion to be visible on both white and black */
+    mix-blend-mode: exclusion;
 }
 
 .cursor-follower {
@@ -91,18 +144,17 @@ img {
     border: 1px solid var(--color-text);
     border-radius: 50%;
     position: fixed;
-    top: 0;
-    left: 0;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s, transform 0.1s;
 }
 
 .cursor-follower.active {
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    /* Subtle tint in light mode */
     border-color: transparent;
 }
 
@@ -114,24 +166,23 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px var(--spacing-container);
+    padding: 20px var(--spacing-container);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    mix-blend-mode: exclusion;
+    background: rgba(255, 255, 255, 0.9);
+    /* Slight backdrop for legibility */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.nav-logo a {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 24px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-}
-
-.nav-logo span {
-    color: var(--color-accent);
+.nav-logo .logo-img {
+    height: 50px;
+    /* Adjust size */
+    width: auto;
+    object-fit: contain;
+    /* Ensure it works in light mode (it's a black logo) */
 }
 
 .nav-menu-btn {
@@ -143,6 +194,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
+    color: var(--color-text);
 }
 
 .hamburger {
@@ -167,7 +219,8 @@ img {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--color-accent);
+    background: #000;
+    /* Contrast menu */
     z-index: 90;
     display: flex;
     justify-content: center;
@@ -191,14 +244,14 @@ img {
     font-family: var(--font-display);
     font-size: 6vw;
     font-weight: 700;
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     transition: transform 0.3s;
 }
 
 .menu-links a:hover {
     transform: skewX(-10deg) translateX(20px);
-    color: #fff;
+    color: var(--color-accent);
 }
 
 /* =========================================
@@ -213,118 +266,115 @@ img {
     padding: 0 var(--spacing-container);
     padding-top: 80px;
     overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f4f4 100%);
 }
 
 .hero-content {
     width: 100%;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(60px, 11vw, 200px); /* Massive Type */
+    font-size: clamp(60px, 11vw, 200px);
     font-weight: 800;
     line-height: 0.85;
     text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
+    color: var(--color-text);
 }
 
 .hero-title .highlight {
     color: transparent;
     -webkit-text-stroke: 2px var(--color-text);
     transition: 0.5s;
+    position: relative;
+    display: inline-block;
 }
 
 .hero-title:hover .highlight {
-    color: var(--color-accent);
+    color: var(--color-text);
     -webkit-text-stroke: 0px;
 }
 
 .hero-sub {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 30px;
 }
 
 .hero-sub p {
-    max-width: 400px;
-    font-size: 1.1rem;
-    color: var(--color-gray);
+    max-width: 450px;
+    font-size: 1.2rem;
+    color: #444;
+    font-weight: 500;
 }
 
 .btn-primary {
-    font-family: var(--font-display);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-weight: 600;
     text-transform: uppercase;
-    border: 1px solid var(--color-text);
-    padding: 15px 30px;
-    border-radius: 50px;
-    transition: all 0.3s;
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 18px 40px;
+    border-radius: 5px;
+    /* Boxier for brutalism */
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    letter-spacing: 1px;
 }
 
 .btn-primary:hover {
-    background: var(--color-text);
-    color: var(--color-bg);
-}
-
-.btn-primary .arrow {
-    transition: transform 0.3s;
-}
-
-.btn-primary:hover .arrow {
-    transform: translateX(5px);
+    background: var(--color-accent);
+    color: #fff;
+    transform: scale(1.05);
 }
 
 /* =========================================
-   MARQUEE
+   MARQUEE (Light Mode)
    ========================================= */
 .marquee-section {
     padding: 60px 0;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    background: #000;
+    border-top: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
+    background: var(--color-bg);
     overflow: hidden;
 }
 
 .marquee-track {
     display: flex;
     width: fit-content;
-    animation: marquee-scroll 20s linear infinite;
-}
-
-.marquee-content {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
+    animation: marquee-scroll 25s linear infinite;
 }
 
 .marquee-content span {
     font-family: var(--font-display);
-    font-size: 4vw;
-    font-weight: 700;
+    font-size: 5vw;
+    font-weight: 800;
     text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px #555;
-    margin: 0 20px;
+    color: var(--color-text);
+    margin: 0 40px;
 }
 
-/* Separator styling */
 .marquee-content .separator {
     color: var(--color-accent);
-    -webkit-text-stroke: 0;
 }
 
 @keyframes marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* =========================================
@@ -350,9 +400,10 @@ img {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--color-gray);
+    font-weight: 700;
+    color: var(--color-accent);
     position: sticky;
-    top: 100px;
+    top: 120px;
 }
 
 .intro-text h2 {
@@ -360,89 +411,98 @@ img {
     font-size: clamp(40px, 5vw, 80px);
     line-height: 1;
     margin-bottom: 40px;
+    color: var(--color-text);
 }
 
 .intro-text .text-outline {
     font-style: italic;
-    color: var(--color-accent);
+    color: #666;
+    /* Softer contrast */
 }
 
 .intro-text p {
-    font-size: 1.5rem;
-    color: var(--color-gray);
-    max-width: 800px;
-    line-height: 1.6;
+    font-size: 1.6rem;
+    color: #333;
+    max-width: 900px;
+    line-height: 1.5;
 }
 
 /* =========================================
-   SERVICES GRID (BRUTALIST)
+   SERVICES GRID (BRUTALIST - HIGH CONTRAST)
    ========================================= */
 .services {
     padding: var(--spacing-block) var(--spacing-container);
+    background: #f9f9f9;
 }
 
 .section-header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     margin-bottom: 60px;
 }
 
 .section-header h2 {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 3rem;
     text-transform: uppercase;
     white-space: nowrap;
+    font-weight: 800;
 }
 
 .section-header .line {
     width: 100%;
-    height: 1px;
-    background: #333;
+    height: 2px;
+    background: var(--color-border);
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* border: 1px solid #333; */
+    border: 2px solid var(--color-border);
+    background: var(--color-border);
+    /* Creates gap lines */
+    gap: 2px;
+    /* Thickness of internal lines */
 }
 
 .service-card {
-    border: 1px solid #333;
-    padding: 60px;
+    background: var(--color-bg);
+    padding: 80px 60px;
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease;
     position: relative;
-    /* Negative margin to collapse borders */
-    margin-right: -1px;
-    margin-bottom: -1px;
+    min-height: 400px;
 }
 
 .service-card:hover {
-    background: var(--color-white);
-    color: var(--color-black);
-    z-index: 2;
+    background: #000;
+    color: #fff;
+    cursor: none;
+    /* Let custom cursor take over */
 }
 
 .service-card .card-header {
-    font-size: 14px;
-    font-family: var(--font-body);
-    margin-bottom: 40px;
-    opacity: 0.5;
+    font-size: 16px;
+    font-family: 'Space Grotesk';
+    /* Monospaced vibe */
+    margin-bottom: 60px;
+    font-weight: 600;
 }
 
 .service-card h3 {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     margin-bottom: 20px;
     line-height: 0.9;
+    font-weight: 700;
 }
 
 .service-card p {
     font-size: 1.1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 400px;
     opacity: 0.8;
 }
@@ -451,28 +511,30 @@ img {
     position: absolute;
     top: 60px;
     right: 60px;
-    font-size: 2rem;
-    opacity: 0;
-    transition: 0.4s;
+    font-size: 2.5rem;
+    font-weight: 300;
 }
 
 .service-card:hover .card-icon {
-    opacity: 1;
-    transform: translate(5px, -5px);
+    /* rotate arrow on hover */
+    transform: rotate(45deg);
+    color: var(--color-accent);
 }
 
-/* INVERTED PRESET */
+/* INVERTED PRESET - Make it BLACK initially */
 .service-card.inverted {
-    background: #111;
+    background: #000;
     color: #fff;
 }
+
+/* On hover, invert back to white or accent */
 .service-card.inverted:hover {
     background: var(--color-accent);
     color: #fff;
 }
 
 /* =========================================
-   PARALLAX IMAGE BREAK
+   IMAGE BREAK (Parallax)
    ========================================= */
 .image-break {
     height: 80vh;
@@ -483,12 +545,11 @@ img {
 
 .parallax-image-container {
     width: 100%;
-    height: 120%; /* Taller for parallax */
-    background: url('https://images.unsplash.com/photo-1622675363311-ac97f3b97b0a?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-    /* High tech warehouse / logistics vibe */
-    filter: grayscale(100%) contrast(1.2);
-    /* transform is handled by JS usually, but simple CSS attached here */
-    transform: translateY(-10%); 
+    height: 120%;
+    background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    /* Cleaner, brighter logistics image */
+    filter: grayscale(100%);
+    /* Maintain monochrome chic */
 }
 
 .parallax-overlay {
@@ -500,24 +561,26 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .parallax-overlay h2 {
     font-family: var(--font-display);
-    font-size: 10vw;
-    color: white;
+    font-size: 12vw;
+    color: #fff;
     text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     mix-blend-mode: overlay;
     text-align: center;
 }
 
 /* =========================================
-   REVIEWS (Horizontal Scroll)
+   REVIEWS (Clean & Sharp)
    ========================================= */
 .reviews {
     padding: var(--spacing-block) 0;
     background: var(--color-bg);
+    border-top: 2px solid var(--color-border);
 }
 
 .reviews-title {
@@ -526,6 +589,7 @@ img {
     font-size: 4rem;
     margin-bottom: 60px;
     text-transform: uppercase;
+    font-weight: 800;
 }
 
 .reviews-slider {
@@ -533,119 +597,115 @@ img {
     gap: 40px;
     overflow-x: auto;
     padding: 0 var(--spacing-container);
-    padding-bottom: 40px;
-    /* Hide scrollbar */
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-}
-
-.reviews-slider::-webkit-scrollbar {
-    display: none;
+    padding-bottom: 60px;
 }
 
 .review-item {
-    min-width: 400px;
-    background: #111;
-    padding: 40px;
-    border: 1px solid #333;
+    min-width: 450px;
+    background: #fff;
+    padding: 50px;
+    border: 2px solid var(--color-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+    /* Brutalist hard shadow */
+    transition: transform 0.3s;
+}
+
+.review-item:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--color-accent);
 }
 
 .review-item .stars {
     color: var(--color-accent);
-    margin-bottom: 20px;
-    letter-spacing: 5px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
 }
 
 .review-item .review-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-style: italic;
-    color: #ccc;
+    color: #111;
     margin-bottom: 30px;
+    line-height: 1.4;
 }
 
 .review-item .review-author {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.google-badge {
-    margin-top: 40px;
-    margin-left: var(--spacing-container);
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid #333;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.google-badge .rating {
-    font-weight: 700;
-    color: var(--color-white);
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 }
 
 /* =========================================
-   FOOTER
+   FOOTER (Big Impact)
    ========================================= */
 .footer {
     padding: var(--spacing-block) var(--spacing-container);
     background: #000;
     color: #fff;
-    border-top: 1px solid #333;
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-cta {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-cta h2 {
-    font-family: var(--font-display);
-    font-size: 5vw;
-    margin-bottom: 40px;
+    font-family: var(--font-body);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #888;
 }
 
 .btn-giant {
     font-family: var(--font-display);
-    font-size: 4rem;
+    font-size: clamp(60px, 8vw, 150px);
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
-    border-bottom: 4px solid var(--color-accent);
-    transition: 0.3s;
+    border-bottom: 6px solid var(--color-accent);
+    line-height: 0.9;
+    display: inline-block;
+    transition: 0.4s;
 }
 
 .btn-giant:hover {
     color: var(--color-accent);
     border-bottom-color: #fff;
+    transform: skewX(-10deg);
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
+    border-top: 1px solid #333;
+    padding-top: 60px;
 }
 
 .footer-col h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     text-transform: uppercase;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-col ul {
-    list-style: none;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #666;
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
-    color: #888;
+    margin-bottom: 12px;
+    color: #aaa;
     transition: 0.3s;
+    font-size: 1.1rem;
 }
 
 .footer-col ul li:hover {
@@ -654,30 +714,39 @@ img {
 }
 
 .footer-big-logo {
+    position: absolute;
+    bottom: -5vw;
+    left: 0;
+    width: 100%;
     font-family: var(--font-display);
-    font-size: 18vw;
+    font-size: 24vw;
     font-weight: 900;
     line-height: 0.8;
-    color: #111; /* Very dark grey text */
+    color: #111;
     text-align: center;
     pointer-events: none;
     user-select: none;
+    z-index: 0;
 }
 
 /* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
-    .intro-grid {
+
+    .intro-grid,
+    .services-grid,
+    .footer-grid {
         grid-template-columns: 1fr;
     }
+
     .intro-label {
-        position: relative;
-        top: 0;
+        position: static;
         margin-bottom: 20px;
     }
-    .services-grid {
-        grid-template-columns: 1fr;
+
+    .service-card {
+        padding: 40px;
     }
 }
 
@@ -686,22 +755,27 @@ img {
         --spacing-container: 6vw;
         --spacing-block: 80px;
     }
+
     .hero-title {
-        font-size: 16vw; 
+        font-size: 15vw;
     }
+
     .hero-sub {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 30px;
     }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
+
+    .nav-logo .logo-img {
+        height: 35px;
     }
-    .btn-giant {
-        font-size: 2.5rem;
-    }
+
     .review-item {
-        min-width: 80vw;
+        min-width: 85vw;
+    }
+
+    .footer-big-logo {
+        font-size: 30vw;
+        bottom: -2vw;
     }
 }

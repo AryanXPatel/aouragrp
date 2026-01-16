@@ -4,6 +4,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- PRELOADER ---
+    setTimeout(() => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.classList.add('loaded');
+        }
+    }, 1500); // 1.5 seconds synthetic load
+
     // --- CUSTOM CURSOR ---
     const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
@@ -74,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
-                // Optional: stop observing once revealed
-                // revealObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -109,8 +115,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollPosition = window.scrollY;
         // Simple parallax calculation
-        // Limit the effect to when it's in view could be better, but this is simple enough
-        // parallaxImage.style.transform = `translateY(${scrollPosition * 0.1}px)`;
+        const offset = scrollPosition * 0.15;
+        parallaxImage.style.transform = `translateY(${offset - 100}px)`; // Offset logic
+    });
+
+    // --- MAGNETIC BUTTON EFFECT (Think Hard Improvement) ---
+    // Applies to the main CTA button for a premium feel
+    const magneticBtns = document.querySelectorAll('.btn-primary');
+
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px) scale(1)';
+        });
     });
 
     // --- REMOVE LOADING CLASS ---

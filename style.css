@@ -550,6 +550,21 @@ img {
     transition: color 0.3s ease;
 }
 
+.service-index-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-index-subline {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #888;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
 .service-index-arrow {
     font-size: 2rem;
     color: var(--color-text);
@@ -562,6 +577,10 @@ img {
 .service-index-item:hover .service-index-title,
 .service-index-item:hover .service-index-number {
     color: var(--color-accent);
+}
+
+.service-index-item:hover .service-index-subline {
+    color: #555;
 }
 
 .service-index-item:hover .service-index-arrow {
@@ -747,6 +766,18 @@ img {
     font-size: 0.95rem;
     line-height: 1.5;
     color: #666;
+    margin-bottom: 16px;
+}
+
+.challenge-solution {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 /* =========================================

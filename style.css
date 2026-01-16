@@ -489,6 +489,46 @@ img {
 }
 
 /* =========================================
+   SERVICES SHOWCASE - STACKED LAYOUT
+   ========================================= */
+.services-showcase {
+    padding: 80px var(--spacing-container);
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+.services-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.services-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-item {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4.5vw, 52px);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    line-height: 1.1;
+}
+
+.service-item .bullet {
+    color: var(--color-accent);
+    font-size: 0.8em;
+}
+
+/* =========================================
    WORK PORTFOLIO - BENTO GRID
    ========================================= */
 .work {

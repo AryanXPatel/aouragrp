@@ -2408,3 +2408,475 @@ img {
         font-size: 1rem;
     }
 }
+
+/* =========================================
+   WHY US PAGE STYLES
+   ========================================= */
+
+/* Why Us Hero */
+.whyus-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 140px var(--spacing-container) 80px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.whyus-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 77, 0, 0.03) 100%);
+    pointer-events: none;
+}
+
+.whyus-hero-content {
+    max-width: 1200px;
+    z-index: 2;
+}
+
+.whyus-hero-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 40px;
+    padding: 10px 24px;
+    border: 1px solid var(--color-accent);
+}
+
+.whyus-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 9vw, 120px);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.whyus-hero-title .line {
+    display: block;
+}
+
+.whyus-hero-title .accent {
+    color: var(--color-accent);
+}
+
+/* =========================================
+   PILLARS SECTION
+   ========================================= */
+.pillars {
+    padding: var(--spacing-block) var(--spacing-container);
+    background: #fff;
+}
+
+.pillars-intro {
+    max-width: 800px;
+    margin-bottom: 80px;
+}
+
+.pillars-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.pillars-text {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.6;
+    color: #333;
+}
+
+.pillars-text strong {
+    color: var(--color-text);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 2px solid #111;
+    background: #111;
+    gap: 2px;
+}
+
+.pillar-card {
+    background: #fff;
+    padding: 60px 50px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.pillar-card:hover {
+    background: #f9f9f9;
+}
+
+.pillar-card.inverted {
+    background: #000;
+    color: #fff;
+}
+
+.pillar-card.inverted:hover {
+    background: var(--color-accent);
+}
+
+.pillar-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.pillar-card.inverted .pillar-number {
+    color: var(--color-accent);
+}
+
+.pillar-card.inverted:hover .pillar-number {
+    color: #fff;
+}
+
+.pillar-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.pillar-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* =========================================
+   METHOD TIMELINE
+   ========================================= */
+.method {
+    padding: var(--spacing-block) var(--spacing-container);
+    background: #f9f9f9;
+}
+
+.method-header {
+    margin-bottom: 80px;
+}
+
+.method-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.method-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 80px);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.method-header h2 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #666;
+    text-transform: none;
+}
+
+.method-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.method-step {
+    display: flex;
+    gap: 50px;
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.method-step:first-child {
+    border-top: 1px solid #ddd;
+}
+
+.step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.step-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.step-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--color-accent), transparent);
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.step-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;
+}
+
+/* =========================================
+   PROOF STATS SECTION
+   ========================================= */
+.proof {
+    background: #000;
+    color: #fff;
+    padding: 120px var(--spacing-container);
+}
+
+.proof-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.proof-stat {
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.proof-stat:hover {
+    border-color: var(--color-accent);
+    background: rgba(255, 77, 0, 0.05);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 80px);
+    color: var(--color-accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.proof-stat .stat-label {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.stat-context {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+/* =========================================
+   DIFFERENCE COMPARISON
+   ========================================= */
+.difference {
+    padding: var(--spacing-block) var(--spacing-container);
+    background: #fff;
+}
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.difference-left {
+    position: sticky;
+    top: 120px;
+}
+
+.difference-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.difference-left h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 60px);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.difference-left h2 .accent {
+    color: var(--color-accent);
+}
+
+.difference-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.difference-item {
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.comparison {
+    padding: 25px 30px;
+    background: #f9f9f9;
+}
+
+.comparison .them {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.comparison p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.comparison.us {
+    background: #000;
+    color: #fff;
+}
+
+.comparison.us .them {
+    color: var(--color-accent);
+}
+
+.comparison.us p {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* =========================================
+   WHY US PAGE RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .difference-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .difference-left {
+        position: static;
+    }
+
+    .proof-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .whyus-hero {
+        padding-top: 120px;
+    }
+
+    .whyus-hero-title {
+        font-size: clamp(32px, 10vw, 80px);
+    }
+
+    .pillar-card {
+        padding: 40px 30px;
+    }
+
+    .method-step {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 0;
+    }
+
+    .step-marker {
+        flex-direction: row;
+        min-width: auto;
+        gap: 20px;
+    }
+
+    .step-line {
+        display: none;
+    }
+
+    .proof-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .proof-stat {
+        padding: 30px;
+    }
+
+    .stat-value {
+        font-size: clamp(40px, 12vw, 60px);
+    }
+}
+
+@media (max-width: 480px) {
+    .whyus-hero-label {
+        font-size: 0.75rem;
+        padding: 8px 16px;
+    }
+
+    .comparison {
+        padding: 20px;
+    }
+}
